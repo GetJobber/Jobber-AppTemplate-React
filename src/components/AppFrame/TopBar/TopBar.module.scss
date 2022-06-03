@@ -1,0 +1,77 @@
+.topBar {
+  display: flex;
+  background: var(--color-heading);
+  justify-content: space-between;
+  border-bottom: var(--border-base) solid var(--color-blue--light);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--space-base) * 3.75);
+  border-right: var(--border-base) solid var(--color-blue--light);
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.linkContainer {
+  display: none;
+
+  @media (min-width: 640px) {
+    display: flex;
+    align-items: center;
+    padding: calc(var(--space-small) * 1.5) var(--space-large);
+    min-width: fit-content;
+
+    svg {
+      fill: var(--color-text--reverse);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      > p {
+        font-size: var(--typography--fontSize-small);
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--color-text--reverse);
+      }
+    }
+  }
+}
+
+.settingsMenu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-smaller);
+  margin-left: var(--space-small);
+  min-width: 0;
+
+  > p {
+    font-size: var(--typography--fontSize-small);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-text--reverse);
+    line-height: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  svg {
+    fill: var(--color-text--reverse) !important;
+  }
+
+  span > svg {
+    fill: var(--color-greyBlue--dark) !important;
+  }
+
+  @media (min-width: 640px) {
+    margin-left: auto;
+  }
+}
