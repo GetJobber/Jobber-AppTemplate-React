@@ -1,10 +1,11 @@
-import React, { FC } from "react";
-
-import { AppFrameProps } from "../interfaces";
-// @ts-ignore
+import { FC } from "react";
 import styles from "./Logo.module.scss";
 
-const Logo: FC<AppFrameProps> = ({ logo }) => {
+type AppLogo = {
+  logo: string;
+};
+
+const Logo: FC<AppLogo> = ({ logo }) => {
   return (
     <div className={styles.logo}>
       <img

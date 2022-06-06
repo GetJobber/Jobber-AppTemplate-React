@@ -1,46 +1,18 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
-
-import Home from "./components/Home/Homte";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import appLogo from "assets/images/app-logo-placeholder.svg";
+import AppFrame from "components/AppFrame";
+import Home from "pages/Home/Home";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="auth" element={<Auth />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppFrame logo={appLogo} />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-// const Home = () => {
-//   return <div>Home</div>;
-// };
-
-const Auth = () => {
-  const params = useParams();
-  const [searchParams] = useSearchParams();
-  const code = searchParams.get("code");
-
-  //call our api get response
-
-  //if(reponse) redirect to /
-  return (
-    // <div>
-    //   <pre>params: {JSON.stringify(params, null, 2)}</pre>
-    //   <pre>searchParams: {JSON.stringify({ code }, null, 2)}</pre>
-    // </div>
-    <></>
-  );
-};
 
 export default App;

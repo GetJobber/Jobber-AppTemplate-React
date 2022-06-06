@@ -1,23 +1,22 @@
-import React, { FC } from "react";
-
-// @ts-ignore
+import { FC } from "react";
+import { Outlet } from "react-router-dom";
 import styles from "./AppFrame.module.scss";
 import Footer from "./Footer";
-import { AppFrameProps } from "./interfaces";
-import Logo from "./Logo";
+import AppLogo from "./AppLogo";
 import TopBar from "./TopBar";
 
-const AppFrame: FC<AppFrameProps> = ({ logo, children }) => {
+type AppFrameProps = {
+  logo: string;
+};
+
+const AppFrame: FC<AppFrameProps> = ({ logo }) => {
   return (
     <div className={styles.appFrame}>
       <TopBar />
-
       <div className={styles.scrollWrapper}>
         <div className={styles.centerWrapper}>
-          <Logo logo={logo} />
-
-          <div className={styles.content}>{children}</div>
-
+          <AppLogo logo={logo} />
+          <div className={styles.content}>{<Outlet />}</div>
           <Footer />
         </div>
       </div>
