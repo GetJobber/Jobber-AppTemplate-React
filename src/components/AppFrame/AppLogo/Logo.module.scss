@@ -1,0 +1,18 @@
+.logo {
+  flex: 0 0 auto;
+
+  padding: 0 0 var(--space-large) var(--space-large);
+
+  @media (min-width: 640px) {
+    padding: 0 0 var(--space-largest) var(--space-large);
+  }
+
+  img {
+    display: block;
+    height: var(--space-largest);
+
+    @media (min-width: 640px) {
+      height: calc(var(--space-base) * 3.75);
+    }
+  }
+}

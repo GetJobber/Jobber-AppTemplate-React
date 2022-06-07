@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--space-base) * 3.75);
+  border-right: var(--border-base) solid var(--color-blue--light);
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}

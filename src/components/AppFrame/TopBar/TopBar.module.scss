@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  background: var(--color-heading);
+  justify-content: space-between;
+  border-bottom: var(--border-base) solid var(--color-blue--light);
+}

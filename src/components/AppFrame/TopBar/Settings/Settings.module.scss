@@ -1,0 +1,30 @@
+.settingsMenu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-smaller);
+  margin-left: var(--space-small);
+  min-width: 0;
+
+  > p {
+    font-size: var(--typography--fontSize-small);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-text--reverse);
+    line-height: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  svg {
+    fill: var(--color-text--reverse) !important;
+  }
+
+  span > svg {
+    fill: var(--color-greyBlue--dark) !important;
+  }
+
+  @media (min-width: 640px) {
+    margin-left: auto;
+  }
+}

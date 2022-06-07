@@ -1,0 +1,39 @@
+.appFrame {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    var(--color-heading),
+    var(--color-heading) 450px,
+    var(--color-disabled--secondary) 450px
+  );
+}
+
+.scrollWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: var(--space-large) var(--space-base) 0 var(--space-base);
+
+  @media (min-width: 640px) {
+    padding: var(--space-largest) calc(var(--space-base) * 3.75) 0
+      calc(var(--space-base) * 3.75);
+  }
+}
+
+.centerWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+
+  background: var(--color-white);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-base);
+}

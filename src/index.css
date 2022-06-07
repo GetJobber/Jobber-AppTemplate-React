@@ -1,10 +1,22 @@
-body {
+html,
+body,
+body > div {
+  height: 100%;
+  padding: 0;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  text-decoration: none;
+  color: var(--theme-ui-colors-green, var(--color-green));
+}
+
+a:hover {
+  color: var(--theme-ui-colors-greenDark, var(--color-green--dark));
 }

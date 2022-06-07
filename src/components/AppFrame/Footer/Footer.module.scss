@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 var(--space-largest);
+
+  > p {
+    margin-left: var(--space-smallest);
+    color: var(--color-surface--reverse);
+    text-transform: uppercase;
+    font-weight: 700;
+
+    a,
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

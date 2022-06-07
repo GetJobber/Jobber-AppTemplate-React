@@ -1,12 +1,17 @@
-import { Page } from "@jobber/components/Page";
-import { Text } from "@jobber/components/Text";
-import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import appLogo from "assets/images/app-logo-placeholder.svg";
+import AppFrame from "components/AppFrame";
+import Home from "pages/Home/Home";
 
 function App() {
   return (
-    <Page title="👋  Congrats on building a Jobber app">
-      <Text>React version: {React.version}</Text>
-    </Page>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppFrame logo={appLogo} />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
