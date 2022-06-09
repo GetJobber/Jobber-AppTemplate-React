@@ -1,4 +1,3 @@
-import { Heading } from "@jobber/components/Heading";
 import { FC } from "react";
 import styles from "./EmptyStateCard.module.scss";
 
