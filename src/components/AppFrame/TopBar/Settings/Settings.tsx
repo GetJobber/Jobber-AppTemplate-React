@@ -1,12 +1,28 @@
 import { Button } from "@jobber/components/Button";
 import { Menu } from "@jobber/components/Menu";
 import { Text } from "@jobber/components/Text";
+import { useUserContext } from "contexts";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { logout } from "services";
 import styles from "./Settings.module.scss";
 
 const Settings = () => {
+  const { user } = useUserContext();
+  const navigate = useNavigate();
+  const handleLogout = useCallback(async () => {
+    try {
+      await logout();
+      localStorage.removeItem("user");
+      window.location.href = "https://getjobber.com/";
+    } catch (error) {
+      console.log("error", error);
+      navigate("/auth");
+    }
+  }, []);
   return (
     <div className={styles.settingsMenu}>
-      <Text>{`ACCOUNT_NAME`}</Text>
+      <Text>{user.accountName}</Text>
       <div style={{ marginRight: "var(--space-smaller)" }}>
         <Menu
           activator={
@@ -23,10 +39,7 @@ const Settings = () => {
                 {
                   label: "Log out",
                   icon: "logout",
-                  onClick: () =>
-                    (window.location.href = `${window.location.origin}${
-                      process.env.RAILS_RELATIVE_URL_ROOT ?? ""
-                    }/logout`),
+                  onClick: handleLogout,
                 },
               ],
             },

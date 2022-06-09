@@ -1,17 +1,11 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import appLogo from "assets/images/app-logo-placeholder.svg";
-import AppFrame from "components/AppFrame";
-import Home from "pages/Home/Home";
+import Routes from "components/Routes";
+import { UserProvider } from "contexts";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AppFrame logo={appLogo} />}>
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <Routes />
+    </UserProvider>
   );
 }
 
