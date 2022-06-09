@@ -1,33 +1,22 @@
-import React, { FC, ReactElement } from "react";
 import { render, RenderOptions } from "@testing-library/react";
 import { UserProvider } from "contexts";
+import { FC, ReactElement } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { User } from "types/user";
 
-interface AllProvidersInitialValues {
+type ProvidersInitialValues = {
   user: User;
-}
-
-const AllProviders: FC<{
-  children: React.ReactNode;
-  initialValues?: AllProvidersInitialValues;
-}> = ({ children, initialValues }) => {
-  return (
-    <UserProvider initialValue={initialValues?.user}>
-      <MemoryRouter>{children}</MemoryRouter>
-    </UserProvider>
-  );
 };
 
 const customRender = (
   ui: ReactElement,
-  allProvidersInitialValues?: AllProvidersInitialValues,
+  providersInitialValues?: ProvidersInitialValues,
   options?: Omit<RenderOptions, "wrapper">,
 ) => {
-  const wrapper: React.FC = ({ children }) => (
-    <AllProviders initialValues={allProvidersInitialValues}>
-      {children}
-    </AllProviders>
+  const wrapper: FC = ({ children }) => (
+    <UserProvider initialValue={providersInitialValues?.user}>
+      <MemoryRouter>{children}</MemoryRouter>
+    </UserProvider>
   );
   render(ui, {
     wrapper,
