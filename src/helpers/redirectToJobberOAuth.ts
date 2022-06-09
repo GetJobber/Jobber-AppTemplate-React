@@ -1,6 +1,5 @@
 const redirectToJobberOAuth = () => {
-  window.location.href =
-    "https://api.getjobber.com/api/oauth/authorize?client_id=f384a0cc-d6e4-4dd1-bcc0-d5b120398ad9&redirect_uri=http://localhost:3000/auth";
+  window.location.href = `${process.env.REACT_APP_JOBBER_API_URL}?client_id=${process.env.REACT_APP_JOBBER_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}`;
 };
 
 export default redirectToJobberOAuth;
