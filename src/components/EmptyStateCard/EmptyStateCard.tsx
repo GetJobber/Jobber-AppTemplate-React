@@ -7,9 +7,7 @@ const EmptyStateCard: FC = () => {
     <>
       <div className={styles.emptyCardContainer}>
         <div className={styles.emptyCardSkeleton}>
-          <div className={styles.emptyCardHeaderText}>
-            <Heading level={3}>Create your first scheduled report</Heading>
-          </div>
+          <div className={styles.emptyCardHeaderText}></div>
         </div>
       </div>
     </>
