@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "utils/tests";
 import Home from "./Home";
 
-test.skip("Home page shows greeting message", () => {
+test("Home page shows greeting message", () => {
   render(<Home />);
   expect(screen.getByText(/CONGRATS ON BUILDING A JOBBER APP/i)).toBeVisible();
 });

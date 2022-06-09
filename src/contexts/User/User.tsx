@@ -7,10 +7,16 @@ interface UserContext {
   setUser: (newUser: User) => void;
 }
 
+interface UserProviderProps {
+  initialValue?: User;
+}
+
 export const [useUserContext, UserCtxProvider] = createContext<UserContext>();
 
-const UserProvider: FC = ({ children }) => {
+const UserProvider: FC<UserProviderProps> = ({ children, initialValue }) => {
   const [user, setUser] = useState<User>(() => {
+    if (initialValue) return initialValue;
+
     const persistedUser = localStorage.getItem("user");
 
     if (!persistedUser) return "";
