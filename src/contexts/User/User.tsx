@@ -19,7 +19,7 @@ const UserProvider: FC<UserProviderProps> = ({ children, initialValue }) => {
 
     const persistedUser = localStorage.getItem("user");
 
-    if (!persistedUser) return "";
+    if (!persistedUser) return { accountName: "" };
 
     return { ...JSON.parse(persistedUser) };
   });
