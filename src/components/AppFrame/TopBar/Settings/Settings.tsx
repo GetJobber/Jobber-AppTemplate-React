@@ -16,7 +16,6 @@ const Settings = () => {
       localStorage.removeItem("user");
       window.location.href = "https://getjobber.com/";
     } catch (error) {
-      console.log("error", error);
       navigate("/auth");
     }
   }, []);

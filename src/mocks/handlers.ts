@@ -15,6 +15,9 @@ export const handlers = [
       }),
     );
   }),
+  rest.get("http://localhost:4000/logout", (req, res, ctx) => {
+    return res(ctx.status(200));
+  }),
   rest.post("http://localhost:4000/request_access_token", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json({ accountName: "Capsule Corp." }));
   }),
