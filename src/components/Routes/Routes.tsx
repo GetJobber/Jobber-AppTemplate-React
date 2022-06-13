@@ -4,7 +4,6 @@ import { useUserContext } from "contexts";
 import Auth from "pages/Auth";
 import Home from "pages/Home/Home";
 import {
-  BrowserRouter,
   Navigate,
   Outlet,
   Route,
@@ -13,17 +12,15 @@ import {
 
 const Routes = () => {
   return (
-    <BrowserRouter>
-      <ReactRouterRoutes>
-        <Route path="/" element={<ProtectedRoutes />}>
-          <Route element={<AppFrame logo={appLogo} />}>
-            <Route index element={<Navigate to="home" />} />
-            <Route path="home" element={<Home />} />
-          </Route>
+    <ReactRouterRoutes>
+      <Route element={<ProtectedRoutes />}>
+        <Route element={<AppFrame logo={appLogo} />}>
+          <Route index element={<Navigate to="home" />} />
+          <Route path="home" element={<Home />} />
         </Route>
-        <Route path="auth" element={<Auth />} />
-      </ReactRouterRoutes>
-    </BrowserRouter>
+      </Route>
+      <Route path="auth" element={<Auth />} />
+    </ReactRouterRoutes>
   );
 };
 

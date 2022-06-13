@@ -1,4 +1,4 @@
-import { createContext } from "helpers";
+import createContext from "helpers/createContext";
 import { FC, useCallback, useState } from "react";
 import { User } from "types/user";
 
@@ -7,13 +7,19 @@ interface UserContext {
   setUser: (newUser: User) => void;
 }
 
+interface UserProviderProps {
+  initialValue?: User;
+}
+
 export const [useUserContext, UserCtxProvider] = createContext<UserContext>();
 
-const UserProvider: FC = ({ children }) => {
+const UserProvider: FC<UserProviderProps> = ({ children, initialValue }) => {
   const [user, setUser] = useState<User>(() => {
+    if (initialValue) return initialValue;
+
     const persistedUser = localStorage.getItem("user");
 
-    if (!persistedUser) return "";
+    if (!persistedUser) return { accountName: "" };
 
     return { ...JSON.parse(persistedUser) };
   });

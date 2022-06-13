@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "./Logo.module.scss";
+import styles from "./AppLogo.module.scss";
 
 type AppLogo = {
   logo: string;
@@ -8,10 +8,7 @@ type AppLogo = {
 const Logo: FC<AppLogo> = ({ logo }) => {
   return (
     <div className={styles.logo}>
-      <img
-        src={`${process.env.RAILS_RELATIVE_URL_ROOT ?? ""}${logo}`}
-        alt="app logo"
-      />
+      <img src={logo} alt="app logo" />
     </div>
   );
 };

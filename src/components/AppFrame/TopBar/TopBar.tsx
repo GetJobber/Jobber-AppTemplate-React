@@ -4,7 +4,7 @@ import Settings from "./Settings";
 import styles from "./TopBar.module.scss";
 
 const TopBar = () => {
-  const url = process.env.JOBBER_URL || "";
+  const url = process.env.REACT_APP_JOBBER_URL || "https://getjobber.com/";
   return (
     <div className={styles.container}>
       <JobberLogo url={url} />
