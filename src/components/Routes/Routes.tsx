@@ -13,7 +13,7 @@ import {
 const Routes = () => {
   return (
     <ReactRouterRoutes>
-      <Route path="/" element={<ProtectedRoutes />}>
+      <Route element={<ProtectedRoutes />}>
         <Route element={<AppFrame logo={appLogo} />}>
           <Route index element={<Navigate to="home" />} />
           <Route path="home" element={<Home />} />

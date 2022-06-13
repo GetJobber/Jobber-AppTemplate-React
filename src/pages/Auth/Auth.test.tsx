@@ -7,12 +7,12 @@ test("renders authentication in progress message", () => {
   render(<Auth />);
   expect(screen.getByText(/Authentication in progress/i)).toBeInTheDocument();
 });
-test("Redirects to /auth if api call fails", async () => {
+test("Redirects to /home authentication is sucessful", async () => {
   const history = createMemoryHistory();
   history.push("/auth?code=someCode");
   render(<Routes />, {
     router: { location: history.location, navigator: history },
   });
 
-  await waitFor(() => expect(history.location.pathname).toBe("/"));
+  await waitFor(() => expect(history.location.pathname).toBe("/home"));
 });
