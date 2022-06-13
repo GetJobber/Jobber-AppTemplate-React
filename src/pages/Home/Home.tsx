@@ -19,10 +19,10 @@ function Home() {
         setIsFetchingClients(true);
         const { data } = await getClients();
         setClients(data.clients);
-      } catch (error) {
-        navigate("/auth");
-      } finally {
         setIsFetchingClients(false);
+      } catch (error) {
+        setIsFetchingClients(false);
+        navigate("/auth");
       }
     })();
   }, []);

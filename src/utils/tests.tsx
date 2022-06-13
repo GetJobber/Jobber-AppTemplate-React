@@ -1,13 +1,12 @@
 import { render, RenderOptions } from "@testing-library/react";
 import { UserProvider } from "contexts";
-import { createMemoryHistory } from "history";
 import { FC, ReactElement } from "react";
-import { Router, RouterProps } from "react-router-dom";
+import { MemoryRouter, MemoryRouterProps } from "react-router-dom";
 import { User } from "types/user";
 
 type ProvidersInitialValues = {
   user?: User;
-  router?: RouterProps;
+  router?: MemoryRouterProps;
 };
 
 const customRender = (
@@ -17,15 +16,9 @@ const customRender = (
 ) => {
   const wrapper: FC = ({ children }) => {
     const routerProps = providersInitialValues?.router;
-    const history = createMemoryHistory();
     return (
       <UserProvider initialValue={providersInitialValues?.user}>
-        <Router
-          location={routerProps?.location ?? history.location}
-          navigator={routerProps?.navigator ?? history}
-        >
-          {children}
-        </Router>
+        <MemoryRouter {...routerProps}>{children}</MemoryRouter>
       </UserProvider>
     );
   };
