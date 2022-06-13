@@ -2,6 +2,7 @@ import { Button } from "@jobber/components/Button";
 import { Menu } from "@jobber/components/Menu";
 import { Text } from "@jobber/components/Text";
 import { useUserContext } from "contexts";
+import { redirectToJobber, removeFromLocalStorage } from "helpers";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { logout } from "services";
@@ -13,8 +14,8 @@ const Settings = () => {
   const handleLogout = useCallback(async () => {
     try {
       await logout();
-      localStorage.removeItem("user");
-      window.location.href = "https://getjobber.com/";
+      removeFromLocalStorage("user");
+      redirectToJobber();
     } catch (error) {
       navigate("/auth");
     }

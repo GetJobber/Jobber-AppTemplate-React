@@ -24,6 +24,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test:stagged": "CI=true react-app-rewired test --findRelatedTests",
+    "test:coverage": "CI=true react-app-rewired test . --coverage",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "prepare": "husky install"
@@ -58,6 +59,13 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "npm run test:stagged"
+    ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/index.tsx",
+      "src/reportWebVitals.ts",
+      "src/helpers"
     ]
   }
 }

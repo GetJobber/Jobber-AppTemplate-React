@@ -1,7 +1,14 @@
 import userEvent from "@testing-library/user-event";
 import appLogo from "assets/images/app-logo-placeholder.svg";
-import { render, screen } from "utils/tests";
+import { render, screen, waitFor } from "utils/tests";
 import AppFrame from "./AppFrame";
+
+import { removeFromLocalStorage, redirectToJobber } from "helpers";
+
+jest.mock("helpers", () => ({
+  removeFromLocalStorage: jest.fn(),
+  redirectToJobber: jest.fn(),
+}));
 
 test("renders app logo", () => {
   render(<AppFrame logo={appLogo} />);
@@ -60,4 +67,7 @@ test("perform log out when log out button is clicked", async () => {
   const logOutBtn = await screen.findByText(/Log out/i);
 
   userEvent.click(logOutBtn);
+
+  await waitFor(() => expect(removeFromLocalStorage).toHaveBeenCalled());
+  await waitFor(() => expect(redirectToJobber).toHaveBeenCalled());
 });
