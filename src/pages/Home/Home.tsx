@@ -1,4 +1,5 @@
 import { Page } from "@jobber/components/Page";
+import { Spinner } from "@jobber/components/Spinner";
 import { Text } from "@jobber/components/Text";
 import ClientsTable from "components/ClientsTable";
 import EmptyStateCard from "components/EmptyStateCard";
@@ -8,16 +9,20 @@ import { getClients } from "services";
 
 function Home() {
   const [clients, setClients] = useState([]);
+  const [isFetchingClients, setIsFetchingClients] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
       try {
+        setIsFetchingClients(true);
         const { data } = await getClients();
         setClients(data.clients);
       } catch (error) {
-        console.log("errorasdasdasdasdas", error);
         navigate("/auth");
+      } finally {
+        setIsFetchingClients(false);
       }
     })();
   }, []);
@@ -39,7 +44,9 @@ function Home() {
           this Client info.
         </Text>
       </div>
-      {clients.length > 0 ? (
+      {isFetchingClients ? (
+        <Spinner size="small" />
+      ) : clients.length > 0 ? (
         <ClientsTable clients={clients} />
       ) : (
         <EmptyStateCard />
