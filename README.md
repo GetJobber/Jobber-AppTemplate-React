@@ -1,3 +1,19 @@
+# What is this APP for?
+
+This React App Template is meant to be a quick and easy way to get you
+up to speed using our Jobber GraphQL API. This App consumes a RAILS backend application
+that handles authentication and GraphQL queries.
+
+# OAuth flow
+
+The authentication flow is done by both apps, the frontend is responsable to receive the `code`
+returned from our Jobber GraphQL API once the users goes through the oauth and allow the app to connect to 
+they jobber account.
+
+On this App you will find a Auth route that will handle redirection to the oauth flow, recieving the code, sending
+it to the rails backend and if everything is sucessful redirecting to the home page of the app.
+
+> Note: An App needs to be created on the developer center, and the environment variables described in `.env.sample` needs to be configured in order to make the oauth redirection.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
