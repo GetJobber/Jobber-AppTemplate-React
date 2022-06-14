@@ -1,7 +1,8 @@
-# Jobber App Template - React [![CircleCI](https://circleci.com/gh/GetJobber/Jobber-AppTemplate-React/tree/main.svg?style=svg&circle-token=68b2dba51e167696045ec5768bbbcbe49e6c6b82)](https://circleci.com/gh/GetJobber/Jobber-AppTemplate-React/tree/main)
-The primary objective of this React template is to provide a starting point to integrate your app with [Jobber](https://getjobber.com).
+# Jobber App Template - React 
 
-[Demo](https://jobber-app-template-react.herokuapp.com/)
+[![CircleCI](https://circleci.com/gh/GetJobber/Jobber-AppTemplate-React/tree/main.svg?style=svg&circle-token=68b2dba51e167696045ec5768bbbcbe49e6c6b82)](https://circleci.com/gh/GetJobber/Jobber-AppTemplate-React/tree/main)
+
+The primary objective of this React template is to provide a starting point to integrate your app with [Jobber](https://getjobber.com).
 
 ## Getting started
 
