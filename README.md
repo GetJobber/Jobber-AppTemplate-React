@@ -1,3 +1,9 @@
+# Setting up the App
+1. Install dependencies with `npm ci`;
+
+2. Create `.env` file base on the `.env.sample` filling the missing environment variables
+
+3. `npm run start`
 # What is this APP for?
 
 This React App Template is meant to be a quick and easy way to get you
@@ -14,6 +20,12 @@ On this App you will find a Auth route that will handle redirection to the oauth
 it to the rails backend and if everything is sucessful redirecting to the home page of the app.
 
 > Note: An App needs to be created on the developer center, and the environment variables described in `.env.sample` needs to be configured in order to make the oauth redirection.
+
+# Rails backend
+
+Running the backend portion of the app is necessary to have everything working you can find the 
+information about it [here](https://github.com/GetJobber/Jobber-AppTemplate-RailsAPI)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
