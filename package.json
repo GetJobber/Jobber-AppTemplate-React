@@ -23,9 +23,10 @@
     "heroku-prebuild": "npm install -g serve",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test:stagged": "CI=true react-app-rewired test --findRelatedTests",
+    "test:staged": "CI=true react-app-rewired test --findRelatedTests",
     "test:coverage": "CI=true react-app-rewired test . --coverage",
     "test": "react-app-rewired test",
+    "lint": "eslint",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
@@ -58,7 +59,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
-      "npm run test:stagged"
+      "npm run test:staged"
     ]
   },
   "jest": {

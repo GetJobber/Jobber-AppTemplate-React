@@ -1,0 +1,65 @@
+# prettier-ignore
+
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7.0
+
+references:
+  docker_node_base: &docker_node_base
+    image: circleci/node:16.10.0
+
+jobs:
+  checkout_code:
+    docker:
+      - <<: *docker_node_base
+    steps:
+      - checkout
+
+  install_node_dependencies:
+    docker:
+      - <<: *docker_node_base
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+
+  lint_eslint:
+    docker:
+      - <<: *docker_node_base
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: ESLint
+          command: npm run lint
+
+  test_jest:
+    docker:
+      - <<: *docker_node_base
+    environment:
+      REACT_APP_API_URL: "http://localhost:4000/"
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Jest
+          command: npm test
+
+workflows:
+  version: 2
+  lint_and_test:
+    jobs:
+      - checkout_code
+      - install_node_dependencies:
+          requires:
+            - checkout_code
+      - lint_eslint:
+          requires:
+            - install_node_dependencies
+      - test_jest:
+          requires:
+            - install_node_dependencies
+            - lint_eslint
