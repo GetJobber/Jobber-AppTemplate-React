@@ -11,7 +11,7 @@ export function authenticateUser(code: string) {
 }
 
 export function getClients() {
-  return api.get("clients");
+  return api.get("/clients");
 }
 
 export function logout() {
