@@ -38,6 +38,8 @@ jobs:
   test_jest:
     docker:
       - <<: *docker_node_base
+    environment:
+      REACT_APP_API_URL: "http://localhost:4000/"
     steps:
       - checkout
       - node/install-packages:
