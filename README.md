@@ -56,8 +56,10 @@ After granting access to the app, you should expect something like this:
   - Create a developer account:
     - [https://developer.getjobber.com/](https://developer.getjobber.com/)
   - Create new app:
-    - Follow the docs to get started:
-      - [https://developer.getjobber.com/docs/getting_started](https://developer.getjobber.com/docs/getting_started)
+    - Follow the docs to get started: [https://developer.getjobber.com/docs](https://developer.getjobber.com/docs)
+    - Your app must have (as a minimum) read access to *Clients* and *Users* under the Scopes section, in order for this template to work:
+      <img width="1728" alt="Screen Shot 2022-06-22 at 13 27 50" src="https://user-images.githubusercontent.com/804175/175112601-95793519-4400-4392-aedb-bd189c5264c7.png">
+
 
 ### Setup
 
