@@ -4,9 +4,23 @@
 
 The primary objective of this React template is to provide a starting point to integrate your app with [Jobber](https://getjobber.com) using Jobber's components system, [Atlantis](https://atlantis.getjobber.com/).
 
+## Table of contents
+
+- [What is this App for?](#what-is-this-app-for)
+- [OAuth flow](#oauth-flow)
+- [Expected result](#expected-result)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Running the app](#running-the-app)
+- [Deployment](#deployment)
+  - [Deploying with Heroku](#deploying-with-heroku)
+- [Learn More](#learn-more)
+- [License](#license)
+
 ## What is this APP for?
 
-This React App Template is meant to be a quick and easy way to get you up to speed using Jobber's GraphQL API. This App consumes a Ruby on Rails API backend that handles authentication through Jobber's Developer Center and a few GraphQL example queries.
+This React App Template is meant to be a quick and easy way to get you up to speed using Jobber's GraphQL API. This App consumes the [Ruby on Rails API Template](https://github.com/GetJobber/Jobber-AppTemplate-RailsAPI) that handles authentication through Jobber's Developer Center and a few GraphQL example queries.
 
 ## OAuth flow
 
@@ -14,7 +28,17 @@ The authentication flow is done by both apps, the frontend is responsable to rec
 
 On this App you will find an Auth route that will handle redirection to the OAuth flow, recieving the code, sending it to the rails backend and redirecting the user to the home page of the app if everything is sucessful.
 
-> Note: An App needs to be created on Jobber's Developer Center, and the environment variables described in `.env.sample` needs to be configured in order to make the oauth redirection.
+> Note: An App needs to be created on Jobber's Developer Center, and the environment variables described in `.env.sample` need to be configured in order to make the oauth redirection.
+
+You should see a screen similar to this, asking you to grant access to the app:
+
+<img width="1728" alt="Screen Shot 2022-06-22 at 13 27 00" src="https://user-images.githubusercontent.com/804175/175111098-c3671d5d-7d5c-4a63-b119-e8213ec47e40.png">
+
+## Expected result
+
+After granting access to the app, you should expect something like this:
+
+<img width="1728" alt="Screen Shot 2022-06-22 at 12 56 59" src="https://user-images.githubusercontent.com/804175/175110763-4d3bd055-fe4c-47d0-a7d5-d276683b6c98.png">
 
 ## Getting started
 
@@ -33,27 +57,27 @@ On this App you will find an Auth route that will handle redirection to the OAut
     - [https://developer.getjobber.com/](https://developer.getjobber.com/)
   - Create new app:
     - Follow the docs to get started:
-      - [https://developer.getjobber.com/docs](https://developer.getjobber.com/docs)
+      - [https://developer.getjobber.com/docs/getting_started](https://developer.getjobber.com/docs/getting_started)
 
 ### Setup
 
 1. Install dependencies
 
-- `npm ci`;
+   - `npm ci`
 
 2. Setup environment variables
 
-- `cp .env.sample .env`
+   - `cp .env.sample .env`
 
-Make sure to have the correct env values.
+     Make sure to have the correct env values.
 
 3. Start the backend API
 
-- You can find the fully configured Ruby on Rails API used for this template [here](https://github.com/GetJobber/Jobber-AppTemplate-RailsAPI)
+   - You can find the fully configured Ruby on Rails API used for this template [here](https://github.com/GetJobber/Jobber-AppTemplate-RailsAPI)
 
-### Run the app
+### Running the app
 
-`npm start`
+- `npm start`
 
 ## Deployment
 
@@ -65,19 +89,19 @@ This template comes with a `Procfile` configured so you can easily deploy on [He
 
 2. Log in to you Heroku account:
 
-`heroku login`
+   - `heroku login`
 
 3. Create a new Heroku app, this can be done from your browser or using Heroku's CLI in your terminal:
 
-`heroku create <name-of-your-app>`
+   - `heroku create <name-of-your-app>`
 
 4. Verify the git remote was added with `git config --list --local | grep heroku` or add the heroku remote yourself:
 
-`git remote add heroku <heroku-app-url>`
+   - `git remote add heroku <heroku-app-url>`
 
 5. Deploy
 
-`git push heroku main`
+   - `git push heroku main`
 
 To learn more about deploying on Heroku:
 
