@@ -16,6 +16,7 @@ The primary objective of this React template is to provide a starting point to i
 - [Deployment](#deployment)
   - [Deploying with Heroku](#deploying-with-heroku)
 - [Learn More](#learn-more)
+- [Need help of have an idea?](#need-help-or-have-an-idea)
 - [License](#license)
 
 ## What is this APP for?
@@ -114,6 +115,10 @@ You can learn more about Create React App in the [documentation](https://faceboo
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 For more information on Heroku, visit the [Heroku Dev Center](https://devcenter.heroku.com/).
+
+## Need help or have and idea?
+
+Please follow one of these [issue templates](https://github.com/GetJobber/Jobber-AppTemplate-React/issues/new/choose) if you'd like to submit a bug or request a feature.
 
 ## License
 
