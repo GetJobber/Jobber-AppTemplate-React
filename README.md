@@ -48,10 +48,6 @@ After granting access to the app, you should expect something like this:
 
   - Installation process can be found at https://nodejs.org/en/download/
 
-- React 16
-
-  - `npm i -g create-react-app@16.14.0`
-
 - Jobber App
   - Create a developer account:
     - [https://developer.getjobber.com/](https://developer.getjobber.com/)
