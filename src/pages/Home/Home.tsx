@@ -31,9 +31,11 @@ function Home() {
       <div style={{ maxWidth: "854px" }}>
         <Text size="large">
           To customize it and turn it into something you can call your own,
-          explore{" "}
-          <a href="https://atlantis.getjobber.com/">Atlantis design system</a>,
-          and our{" "}
+          explore the Atlantis components (
+          <a href="https://www.npmjs.com/package/@jobber/components">
+            @jobber/components
+          </a>
+          ), and our{" "}
           <a href="https://developer.getjobber.com/docs/">GraphQL API docs</a>.
           Turn that dream into a reality.
         </Text>
