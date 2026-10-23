@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/GetJobber/Jobber-AppTemplate-React/tree/main.svg?style=svg&circle-token=68b2dba51e167696045ec5768bbbcbe49e6c6b82)](https://circleci.com/gh/GetJobber/Jobber-AppTemplate-React/tree/main)
 
-The primary objective of this React template is to provide a starting point to integrate your app with [Jobber](https://getjobber.com) using Jobber's components system, [Atlantis](https://atlantis.getjobber.com/).
+The primary objective of this React template is to provide a starting point to integrate your app with [Jobber](https://getjobber.com) using Jobber's components system, Atlantis ([`@jobber/components`](https://www.npmjs.com/package/@jobber/components)).
 
 ## Table of contents
 
